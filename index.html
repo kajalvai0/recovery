@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Account Recovery Service</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #1877f2 0%, #0d5fbf 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .animate-pulse-slow {
+            animation: pulse 3s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.7;
+            }
+        }
+        .form-input:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px #1877f2;
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <i class="fab fa-facebook text-4xl"></i>
+                    <h1 class="text-2xl font-bold">Facebook Recovery Pro</h1>
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#services" class="hover:text-blue-200 transition">Services</a>
+                    <a href="#how-it-works" class="hover:text-blue-200 transition">How It Works</a>
+                    <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+                    <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+                </nav>
+                <button class="md:hidden text-2xl" id="mobile-menu-button">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden bg-blue-800 py-4" id="mobile-menu">
+            <div class="container mx-auto px-4 flex flex-col space-y-3">
+                <a href="#services" class="hover:text-blue-200 transition">Services</a>
+                <a href="#how-it-works" class="hover:text-blue-200 transition">How It Works</a>
+                <a href="#testimonials" class="hover:text-blue-200 transition">Testimonials</a>
+                <a href="#contact" class="hover:text-blue-200 transition">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h2 class="text-4xl md:text-5xl font-bold mb-6">Recover Your Facebook Account Quickly & Securely</h2>
+                <p class="text-xl mb-8">Our local experts help you regain access to your Facebook account when you're locked out. Fast, reliable service for our community.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#recovery-form" class="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Start Recovery Now <i class="fas fa-arrow-right ml-2"></i>
+                    </a>
+                    <a href="#contact" class="border-2 border-white hover:bg-blue-700 font-bold py-3 px-6 rounded-lg text-center transition duration-300">
+                        Contact Support
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="bg-white p-6 rounded-xl shadow-2xl max-w-md w-full">
+                    <div class="flex items-center mb-6">
+                        <i class="fab fa-facebook text-blue-600 text-4xl mr-3"></i>
+                        <h3 class="text-2xl font-bold text-gray-800">Account Recovery</h3>
+                    </div>
+                    <form id="recovery-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="email">Email or Phone Number</label>
+                            <input type="text" id="email" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="Enter your email or phone" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="fullname">Full Name on Account</label>
+                            <input type="text" id="fullname" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="Your full name" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="problem">Describe Your Issue</label>
+                            <select id="problem" class="w-full px-4 py-2 border rounded-lg form-input" required>
+                                <option value="">Select your problem</option>
+                                <option value="forgot-password">Forgot Password</option>
+                                <option value="hacked-account">Hacked Account</option>
+                                <option value="disabled-account">Disabled Account</option>
+                                <option value="two-factor">Two-Factor Authentication Issue</option>
+                                <option value="other">Other Problem</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition duration-300">
+                            Submit Recovery Request
+                        </button>
+                    </form>
+                    <p class="text-sm text-gray-500 mt-4">We'll contact you within 1 business day to begin the recovery process.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="bg-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-blue-50">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
+                    <h3 class="text-xl font-semibold">Success Rate</h3>
+                    <p class="text-gray-600">of accounts recovered successfully</p>
+                </div>
+                <div class="p-6 rounded-xl bg-blue-50">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">24h</div>
+                    <h3 class="text-xl font-semibold">Average Time</h3>
+                    <p class="text-gray-600">to recover most accounts</p>
+                </div>
+                <div class="p-6 rounded-xl bg-blue-50">
+                    <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                    <h3 class="text-xl font-semibold">Local Clients</h3>
+                    <p class="text-gray-600">helped in our community</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Our Recovery Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We specialize in all types of Facebook account access issues with personalized local support.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-key text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Password Recovery</h3>
+                    <p class="text-gray-600 mb-4">Forgot your password? We'll help you reset it and regain access to your account quickly.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Email/phone not recognized</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Reset link not working</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Security questions forgotten</span>
+                        </li>
+                    </ul>
+                    <a href="#recovery-form" class="text-blue-600 font-semibold hover:text-blue-800 transition">Get Help Now <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-user-shield text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Hacked Account Recovery</h3>
+                    <p class="text-gray-600 mb-4">Someone took over your account? We'll help secure it and remove any unauthorized access.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Password changed by hacker</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Unauthorized posts/messages</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Suspicious login alerts</span>
+                        </li>
+                    </ul>
+                    <a href="#recovery-form" class="text-blue-600 font-semibold hover:text-blue-800 transition">Secure Your Account <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-8 rounded-xl shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-lock text-4xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Disabled Account Help</h3>
+                    <p class="text-gray-600 mb-4">Account disabled by Facebook? We'll guide you through the appeal process to restore it.</p>
+                    <ul class="space-y-2 mb-6">
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Policy violation appeals</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>Identity verification issues</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                            <span>False positive cases</span>
+                        </li>
+                    </ul>
+                    <a href="#recovery-form" class="text-blue-600 font-semibold hover:text-blue-800 transition">Appeal Now <i class="fas fa-arrow-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">How Our Recovery Process Works</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Simple steps to get you back into your Facebook account quickly and securely.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <!-- Step 1 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Submit Request</h3>
+                    <p class="text-gray-600">Fill out our simple form with basic details about your account and issue.</p>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Verification</h3>
+                    <p class="text-gray-600">We'll contact you to verify your identity and account ownership.</p>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Recovery Process</h3>
+                    <p class="text-gray-600">Our experts work on recovering your account using official Facebook channels.</p>
+                </div>
+                
+                <!-- Step 4 -->
+                <div class="text-center">
+                    <div class="bg-blue-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-blue-600 text-2xl font-bold">4</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Access Restored</h3>
+                    <p class="text-gray-600">You regain access and we help secure your account against future issues.</p>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="#recovery-form" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-8 rounded-lg inline-flex items-center transition duration-300">
+                    Start Recovery Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Hear from people in our community who got their Facebook accounts back with our help.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"I thought I'd lost my Facebook account forever after being hacked. Facebook Recovery Pro had me back in within a day! Their local support was so much better than dealing with Facebook directly."</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">SR</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Sarah R.</h4>
+                            <p class="text-gray-500 text-sm">Small Business Owner</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"My account was disabled for no reason and I couldn't figure out how to appeal. These guys knew exactly what to do and got my account back in 2 days. Worth every penny!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">MJ</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Michael J.</h4>
+                            <p class="text-gray-500 text-sm">Teacher</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-8 rounded-xl shadow-md">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-400 mr-2">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 mb-6">"After moving countries, I couldn't access my account due to two-factor authentication issues. The team at Facebook Recovery Pro solved my problem when Facebook support couldn't. Highly recommend!"</p>
+                    <div class="flex items-center">
+                        <div class="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mr-4">
+                            <span class="text-blue-600 font-bold">AP</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Aisha P.</h4>
+                            <p class="text-gray-500 text-sm">Student</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Answers to common questions about our Facebook account recovery service.</p>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <!-- FAQ 1 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-semibold text-lg">Is this service officially affiliated with Facebook?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 bg-white">
+                        <p class="text-gray-600">No, we are an independent service that specializes in helping people navigate Facebook's account recovery processes. We have extensive experience with Facebook's systems and can often achieve faster results than individuals working alone.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 2 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-semibold text-lg">How long does the recovery process take?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 bg-white">
+                        <p class="text-gray-600">Most cases are resolved within 24-48 hours. Simple password resets can sometimes be completed same-day, while more complex cases like hacked accounts or disabled accounts may take 2-3 days. We'll provide a time estimate after reviewing your specific situation.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 3 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-semibold text-lg">Is my personal information safe with you?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 bg-white">
+                        <p class="text-gray-600">Absolutely. We only request the minimum information needed to verify your identity and recover your account. All data is encrypted and we never share your information with third parties. After your account is recovered, we can delete all your personal data upon request.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 4 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-semibold text-lg">What if you can't recover my account?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 bg-white">
+                        <p class="text-gray-600">In the rare case we're unable to recover your account (less than 2% of cases), you don't pay anything. Our success rate is extremely high because we carefully evaluate each case before taking it on. If we determine your account is unrecoverable before starting, we'll let you know immediately.</p>
+                    </div>
+                </div>
+                
+                <!-- FAQ 5 -->
+                <div class="border border-gray-200 rounded-lg overflow-hidden">
+                    <button class="faq-toggle w-full text-left p-6 bg-gray-50 hover:bg-gray-100 transition flex justify-between items-center">
+                        <span class="font-semibold text-lg">Do you offer any guarantees?</span>
+                        <i class="fas fa-chevron-down transition-transform duration-300"></i>
+                    </button>
+                    <div class="faq-content hidden p-6 bg-white">
+                        <p class="text-gray-600">Yes, we offer a 100% satisfaction guarantee. If we're unable to recover your account, you don't pay. Additionally, if your account experiences the same issue within 30 days of our service, we'll help you again at no additional charge.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="gradient-bg text-white py-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Recover Your Facebook Account?</h2>
+            <p class="text-xl mb-8 max-w-2xl mx-auto">Don't lose access to your memories, contacts, and important information. Our local experts are standing by to help.</p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6">
+                <a href="#recovery-form" class="bg-white text-blue-600 hover:bg-blue-50 font-bold py-3 px-8 rounded-lg transition duration-300">
+                    Start Recovery Now <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#contact" class="border-2 border-white hover:bg-blue-700 font-bold py-3 px-8 rounded-lg transition duration-300">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Us Now
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Contact Our Support Team</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Have questions? Need immediate help? Reach out to our local support specialists.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Get In Touch</h3>
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="contact-name">Your Name</label>
+                            <input type="text" id="contact-name" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="Enter your name" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="contact-email">Email Address</label>
+                            <input type="email" id="contact-email" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="Enter your email" required>
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="contact-phone">Phone Number (Optional)</label>
+                            <input type="tel" id="contact-phone" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="Enter your phone number">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 mb-2" for="contact-message">Your Message</label>
+                            <textarea id="contact-message" rows="4" class="w-full px-4 py-2 border rounded-lg form-input" placeholder="How can we help you?" required></textarea>
+                        </div>
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg transition duration-300">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+                
+                <div>
+                    <h3 class="text-2xl font-semibold mb-6">Our Contact Information</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Local Office</h4>
+                                <p class="text-gray-600">123 Recovery Street, Suite 101<br>Your City, ST 12345</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Phone Support</h4>
+                                <p class="text-gray-600">(123) 456-7890<br>Mon-Fri: 9am-7pm, Sat: 10am-4pm</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold">Email Support</h4>
+                                <p class="text-gray-600">help@facebookrecoverypro.com<br>Typically respond within 2 hours</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h4 class="font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-blue-600 text-white p-3 rounded-full hover:bg-blue-700 transition">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="bg-blue-400 text-white p-3 rounded-full hover:bg-blue-500 transition">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="bg-pink-600 text-white p-3 rounded-full hover:bg-pink-700 transition">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="bg-blue-700 text-white p-3 rounded-full hover:bg-blue-800 transition">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fab fa-facebook text-3xl"></i>
+                        <h3 class="text-xl font-bold">Facebook Recovery Pro</h3>
+                    </div>
+                    <p class="text-gray-400">Local experts helping our community recover access to their Facebook accounts quickly and securely.</p>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Password Recovery</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Hacked Account Help</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Disabled Account Appeal</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Two-Factor Issues</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Account Security Review</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#services" class="text-gray-400 hover:text-white transition">Our Services</a></li>
+                        <li><a href="#how-it-works" class="text-gray-400 hover:text-white transition">How It Works</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition">Contact Us</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Subscribe for tips on keeping your Facebook account secure.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Facebook Recovery Pro. All rights reserved.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Help Button -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <button id="help-button" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-lg animate-pulse-slow flex items-center justify-center">
+            <i class="fas fa-question text-xl"></i>
+        </button>
+    </div>
+
+    <!-- Help Modal -->
+    <div id="help-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center hidden">
+        <div class="bg-white rounded-lg p-6 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-xl font-bold">Need Help?</h3>
+                <button id="close-help-modal" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <p class="text-gray-600 mb-4">Our support team is available to assist you with any questions about recovering your Facebook account.</p>
+            <div class="space-y-3">
+                <a href="#contact" class="block bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg text-center transition">
+                    <i class="fas fa-envelope mr-2"></i> Email Support
+                </a>
+                <a href="tel:1234567890" class="block bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded-lg text-center transition">
+                    <i class="fas fa-phone-alt mr-2"></i> Call Now: (123) 456-7890
+                </a>
+                <a href="#recovery-form" class="block bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg text-center transition">
+                    <i class="fas fa-user-shield mr-2"></i> Start Recovery
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ toggle functionality
+        document.querySelectorAll('.faq-toggle').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqContent = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                // Toggle content visibility
+                faqContent.classList.toggle('hidden');
+                
+                // Rotate icon
+                if (faqContent.classList.contains('hidden')) {
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // Form submission (demo purposes)
+        document.getElementById('recovery-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your recovery request! We will contact you shortly to begin the process.');
+            this.reset();
+        });
+
+        // Contact form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! Our support team will respond as soon as possible.');
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+
+        // Help modal functionality
+        const helpButton = document.getElementById('help-button');
+        const helpModal = document.getElementById('help-modal');
+        const closeHelpModal = document.getElementById('close-help-modal');
+
+        helpButton.addEventListener('click', () => {
+            helpModal.classList.remove('hidden');
+        });
+
+        closeHelpModal.addEventListener('click', () => {
+            helpModal.classList.add('hidden');
+        });
+
+        // Close modal when clicking outside
+        helpModal.addEventListener('click', (e) => {
+            if (e.target === helpModal) {
+                helpModal.classList.add('hidden');
+            }
+        });
+
+        // Form input validation styling
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('invalid', function() {
+                this.style.borderColor = '#f87171'; // red-400
+                this.style.boxShadow = '0 0 0 2px #f87171';
+            });
+
+            input.addEventListener('input', function() {
+                if (this.checkValidity()) {
+                    this.style.borderColor = '#d1d5db'; // gray-300
+                    this.style.boxShadow = '0 0 0 2px #1877f2';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
